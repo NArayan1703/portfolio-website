@@ -16,7 +16,20 @@
     overflow:visible;
     background: #fff url('../img/preloader.gif') no-repeat center center;
 }
-
+.overlay-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  padding: 15px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.overlay-effect:hover .overlay-caption {
+  opacity: 1;
+}
 
 
 
@@ -1235,4 +1248,69 @@ ul.slides li {
 	.subscribe {
 	    padding-bottom: 40px;
 	}
+}
+/* Projects Section Styling */
+.project-card {
+  background: #ffffff;
+  padding: 40px;
+  margin-bottom: 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-left: 5px solid #E04343;
+  height: 100%;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.project-card h3 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.project-card p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.project-card strong {
+  color: #E04343;
+}
+
+.project-btn {
+  display: inline-block;
+  background: #E04343;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.project-btn:hover {
+  background: #c13535;
+  color: white;
+}
+
+.all-repos-btn {
+  display: inline-block;
+  padding: 16px 40px;
+  border: 3px solid #E04343;
+  color: #E04343;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.all-repos-btn:hover {
+  background: #E04343;
+  color: white;
 }

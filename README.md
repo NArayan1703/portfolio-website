@@ -1,6 +1,0 @@
-# Narayan Adhikari
-Portfolio page
-
-
-
-
