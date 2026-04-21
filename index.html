@@ -29,7 +29,6 @@
       overflow-x: hidden;
     }
 
-    /* NOISE OVERLAY */
     body::before {
       content: '';
       position: fixed;
@@ -40,7 +39,6 @@
       opacity: 0.4;
     }
 
-    /* NAV */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -83,10 +81,8 @@
 
     .nav-links a:hover { color: var(--text); }
 
-    /* SECTIONS */
     section { position: relative; z-index: 1; }
 
-    /* HERO */
     #hero {
       min-height: 100vh;
       display: flex;
@@ -238,7 +234,6 @@
 
     .hero-socials a:hover { color: var(--accent); }
 
-    /* ABOUT */
     #about {
       padding: 8rem 4rem;
       display: grid;
@@ -306,10 +301,6 @@
       font-weight: 500;
     }
 
-    .about-image-block {
-      position: relative;
-    }
-
     .about-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -371,7 +362,6 @@
       letter-spacing: 0.02em;
     }
 
-    /* SKILLS */
     #skills {
       padding: 8rem 4rem;
       border-top: 1px solid var(--border);
@@ -437,7 +427,6 @@
       transition: width 1s ease;
     }
 
-    /* PROJECTS */
     #projects {
       padding: 8rem 4rem;
       border-top: 1px solid var(--border);
@@ -563,10 +552,8 @@
     }
 
     .project-link:hover { color: var(--accent); }
-
     .project-link svg { width: 14px; height: 14px; }
 
-    /* EXPERIENCE */
     #experience {
       padding: 8rem 4rem;
       border-top: 1px solid var(--border);
@@ -689,6 +676,18 @@
       font-weight: 300;
     }
 
+    .blog-read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 1.25rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
     /* CONTACT */
     #contact {
       padding: 8rem 4rem;
@@ -785,7 +784,6 @@
       color: rgba(136,136,136,0.5);
     }
 
-    /* FOOTER */
     footer {
       border-top: 1px solid var(--border);
       padding: 2.5rem 4rem;
@@ -815,7 +813,6 @@
 
     .footer-socials a:hover { color: var(--accent); }
 
-    /* ANIMATIONS */
     .fade-up {
       opacity: 0;
       transform: translateY(30px);
@@ -827,12 +824,31 @@
       transform: translateY(0);
     }
 
-    /* SCROLLBAR */
+    /* Form status messages */
+    .form-status {
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+      display: none;
+    }
+    .form-status.success {
+      display: block;
+      background: rgba(34,197,94,0.1);
+      border: 1px solid rgba(34,197,94,0.3);
+      color: #22c55e;
+    }
+    .form-status.error {
+      display: block;
+      background: rgba(255,77,0,0.1);
+      border: 1px solid rgba(255,77,0,0.3);
+      color: var(--accent);
+    }
+
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: rgba(255,77,0,0.4); border-radius: 2px; }
 
-    /* MOBILE */
     @media (max-width: 900px) {
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
@@ -848,7 +864,6 @@
 </head>
 <body>
 
-  <!-- NAV -->
   <nav>
     <div class="nav-logo">NA.</div>
     <ul class="nav-links">
@@ -861,7 +876,6 @@
     </ul>
   </nav>
 
-  <!-- HERO -->
   <section id="hero">
     <div class="hero-bg-text">NARAYAN</div>
     <div class="hero-content">
@@ -883,7 +897,6 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
   <section id="about">
     <div class="fade-up">
       <div class="section-label">// who I am</div>
@@ -924,7 +937,6 @@
     </div>
   </section>
 
-  <!-- SKILLS -->
   <section id="skills">
     <div class="skills-header fade-up">
       <div>
@@ -933,58 +945,17 @@
       </div>
     </div>
     <div class="skills-grid">
-      <div class="skill-card fade-up">
-        <span class="skill-icon">⚛️</span>
-        <div class="skill-name">React.js</div>
-        <div class="skill-level">Advanced</div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="width:88%"></div></div>
-      </div>
-      <div class="skill-card fade-up">
-        <span class="skill-icon">🟩</span>
-        <div class="skill-name">Node.js</div>
-        <div class="skill-level">Advanced</div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div>
-      </div>
-      <div class="skill-card fade-up">
-        <span class="skill-icon">🔷</span>
-        <div class="skill-name">JavaScript</div>
-        <div class="skill-level">Advanced</div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="width:90%"></div></div>
-      </div>
-      <div class="skill-card fade-up">
-        <span class="skill-icon">🐍</span>
-        <div class="skill-name">Python</div>
-        <div class="skill-level">Intermediate</div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="width:75%"></div></div>
-      </div>
-      <div class="skill-card fade-up">
-        <span class="skill-icon">🧠</span>
-        <div class="skill-name">Machine Learning</div>
-        <div class="skill-level">Intermediate</div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="width:70%"></div></div>
-      </div>
-      <div class="skill-card fade-up">
-        <span class="skill-icon">⛓️</span>
-        <div class="skill-name">Solana / Blockchain</div>
-        <div class="skill-level">Learning</div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="width:50%"></div></div>
-      </div>
-      <div class="skill-card fade-up">
-        <span class="skill-icon">🗄️</span>
-        <div class="skill-name">MySQL / Databases</div>
-        <div class="skill-level">Intermediate</div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="width:72%"></div></div>
-      </div>
-      <div class="skill-card fade-up">
-        <span class="skill-icon">🌐</span>
-        <div class="skill-name">HTML / CSS</div>
-        <div class="skill-level">Advanced</div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="width:92%"></div></div>
-      </div>
+      <div class="skill-card fade-up"><span class="skill-icon">⚛️</span><div class="skill-name">React.js</div><div class="skill-level">Advanced</div><div class="skill-bar"><div class="skill-bar-fill" style="width:88%"></div></div></div>
+      <div class="skill-card fade-up"><span class="skill-icon">🟩</span><div class="skill-name">Node.js</div><div class="skill-level">Advanced</div><div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div></div>
+      <div class="skill-card fade-up"><span class="skill-icon">🔷</span><div class="skill-name">JavaScript</div><div class="skill-level">Advanced</div><div class="skill-bar"><div class="skill-bar-fill" style="width:90%"></div></div></div>
+      <div class="skill-card fade-up"><span class="skill-icon">🐍</span><div class="skill-name">Python</div><div class="skill-level">Intermediate</div><div class="skill-bar"><div class="skill-bar-fill" style="width:75%"></div></div></div>
+      <div class="skill-card fade-up"><span class="skill-icon">🧠</span><div class="skill-name">Machine Learning</div><div class="skill-level">Intermediate</div><div class="skill-bar"><div class="skill-bar-fill" style="width:70%"></div></div></div>
+      <div class="skill-card fade-up"><span class="skill-icon">⛓️</span><div class="skill-name">Solana / Blockchain</div><div class="skill-level">Learning</div><div class="skill-bar"><div class="skill-bar-fill" style="width:50%"></div></div></div>
+      <div class="skill-card fade-up"><span class="skill-icon">🗄️</span><div class="skill-name">MySQL / Databases</div><div class="skill-level">Intermediate</div><div class="skill-bar"><div class="skill-bar-fill" style="width:72%"></div></div></div>
+      <div class="skill-card fade-up"><span class="skill-icon">🌐</span><div class="skill-name">HTML / CSS</div><div class="skill-level">Advanced</div><div class="skill-bar"><div class="skill-bar-fill" style="width:92%"></div></div></div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
   <section id="projects">
     <div class="fade-up">
       <div class="section-label">// what I've built</div>
@@ -992,7 +963,6 @@
     </div>
     <div class="projects-grid">
 
-      <!-- Featured: FairTicket -->
       <div class="project-card featured fade-up">
         <div>
           <div class="project-num">01 — Featured</div>
@@ -1032,7 +1002,6 @@
         </div>
       </div>
 
-      <!-- Heart Disease Prediction -->
       <div class="project-card fade-up">
         <div class="project-num">02</div>
         <h3 class="project-title">Early Heart Disease Prediction</h3>
@@ -1053,7 +1022,6 @@
         </div>
       </div>
 
-      <!-- FoodShare -->
       <div class="project-card fade-up">
         <div class="project-num">03</div>
         <h3 class="project-title">FoodShare: Community Food Platform</h3>
@@ -1076,7 +1044,6 @@
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
   <section id="experience">
     <div class="fade-up">
       <div class="section-label">// where I've been</div>
@@ -1110,41 +1077,43 @@
     </div>
   </section>
 
-  <!-- BLOG -->
+  <!-- BLOG — linked to Medium -->
   <section id="blog">
     <div class="fade-up">
       <div class="section-label">// thoughts</div>
       <h2 class="section-title">From the Blog</h2>
     </div>
     <div class="blog-grid">
-      <a href="#" class="blog-card fade-up">
+      <a href="https://medium.com/@narayanadhikari970" target="_blank" rel="noopener" class="blog-card fade-up">
         <div class="blog-meta">
           <span>Machine Learning</span>
           <span>5 min read</span>
         </div>
         <div class="blog-title">How I built a heart disease predictor with scikit-learn</div>
         <div class="blog-excerpt">A walkthrough of data preprocessing, model selection, and evaluation metrics used to predict cardiovascular risk early.</div>
+        <div class="blog-read-more">Read on Medium →</div>
       </a>
-      <a href="#" class="blog-card fade-up">
+      <a href="https://medium.com/@narayanadhikari970" target="_blank" rel="noopener" class="blog-card fade-up">
         <div class="blog-meta">
           <span>Blockchain</span>
           <span>7 min read</span>
         </div>
         <div class="blog-title">NFTs as event tickets — solving scalping on Solana</div>
         <div class="blog-excerpt">Exploring how NFT token extensions and transfer hooks can create a fairer ticketing ecosystem with built-in refund logic.</div>
+        <div class="blog-read-more">Read on Medium →</div>
       </a>
-      <a href="#" class="blog-card fade-up">
+      <a href="https://medium.com/@narayanadhikari970" target="_blank" rel="noopener" class="blog-card fade-up">
         <div class="blog-meta">
           <span>Web Dev</span>
           <span>4 min read</span>
         </div>
         <div class="blog-title">Building FoodShare: lessons from a community impact project</div>
         <div class="blog-excerpt">What I learned designing a multi-role food donation platform — from database schema to UX decisions that actually matter.</div>
+        <div class="blog-read-more">Read on Medium →</div>
       </a>
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact">
     <div class="contact-inner">
       <div class="fade-up">
@@ -1173,30 +1142,31 @@
         </div>
       </div>
       <div class="fade-up">
-        <form class="contact-form" onsubmit="handleSubmit(event)">
+        <!-- Formspree form -->
+        <form class="contact-form" id="contact-form" action="https://formspree.io/f/mwvanyrn" method="POST">
           <div class="form-group">
-            <label>Name</label>
-            <input type="text" placeholder="Your name" required />
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required />
           </div>
           <div class="form-group">
-            <label>Email</label>
-            <input type="email" placeholder="your@email.com" required />
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required />
           </div>
           <div class="form-group">
-            <label>Subject</label>
-            <input type="text" placeholder="What's this about?" />
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="What's this about?" />
           </div>
           <div class="form-group">
-            <label>Message</label>
-            <textarea rows="5" placeholder="Tell me about your project or opportunity..." required></textarea>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea>
           </div>
-          <button type="submit" class="btn-primary" style="margin-top:0.5rem;">Send Message →</button>
+          <div class="form-status" id="form-status"></div>
+          <button type="submit" class="btn-primary" id="submit-btn" style="margin-top:0.5rem;">Send Message →</button>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-copy">© 2025 Narayan Adhikari. Built with ❤️ in Nepal.</div>
     <div class="footer-socials">
@@ -1212,43 +1182,28 @@
     const fadeEls = document.querySelectorAll('.fade-up');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(el => {
-        if (el.isIntersecting) {
-          el.target.classList.add('visible');
-        }
+        if (el.isIntersecting) el.target.classList.add('visible');
       });
     }, { threshold: 0.1 });
     fadeEls.forEach(el => observer.observe(el));
 
-    // Animate skill bars on scroll
+    // Animate skill bars
     const skillBars = document.querySelectorAll('.skill-bar-fill');
     const barObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.style.width = entry.target.style.width;
+          entry.target.style.width = entry.target.getAttribute('data-width');
         }
       });
     }, { threshold: 0.5 });
     skillBars.forEach(bar => {
       const target = bar.style.width;
+      bar.setAttribute('data-width', target);
       bar.style.width = '0%';
-      setTimeout(() => { bar.style.width = target; }, 200);
-      barObserver.observe(bar);
+      setTimeout(() => barObserver.observe(bar), 200);
     });
 
-    // Contact form handler
-    function handleSubmit(e) {
-      e.preventDefault();
-      const btn = e.target.querySelector('button[type="submit"]');
-      btn.textContent = 'Message Sent! ✓';
-      btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
-      setTimeout(() => {
-        btn.textContent = 'Send Message →';
-        btn.style.background = '';
-        e.target.reset();
-      }, 3000);
-    }
-
-    // Nav active state on scroll
+    // Nav active state
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-links a');
     window.addEventListener('scroll', () => {
@@ -1259,6 +1214,43 @@
       navLinks.forEach(a => {
         a.style.color = a.getAttribute('href') === '#' + current ? 'var(--accent)' : '';
       });
+    });
+
+    // Formspree AJAX submission
+    const form = document.getElementById('contact-form');
+    const statusEl = document.getElementById('form-status');
+    const submitBtn = document.getElementById('submit-btn');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      submitBtn.textContent = 'Sending…';
+      submitBtn.disabled = true;
+      statusEl.className = 'form-status';
+      statusEl.textContent = '';
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          statusEl.className = 'form-status success';
+          statusEl.textContent = '✓ Message sent! I\'ll get back to you soon.';
+          form.reset();
+          submitBtn.textContent = 'Send Message →';
+          submitBtn.disabled = false;
+        } else {
+          const data = await res.json();
+          throw new Error(data.errors ? data.errors.map(e => e.message).join(', ') : 'Submission failed.');
+        }
+      } catch (err) {
+        statusEl.className = 'form-status error';
+        statusEl.textContent = '✗ ' + (err.message || 'Something went wrong. Please try emailing me directly.');
+        submitBtn.textContent = 'Send Message →';
+        submitBtn.disabled = false;
+      }
     });
   </script>
 </body>
