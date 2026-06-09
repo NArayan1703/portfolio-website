@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Narayan Adhikari — Software Engineer</title>
+  <title>Narayan Adhikari — Full-Stack Developer</title>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -860,6 +860,322 @@
       .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
       footer { padding: 2rem 1.5rem; flex-direction: column; gap: 1rem; text-align: center; }
     }
+
+    /* Editorial visual system */
+    :root {
+      --bg: #f2f0ea;
+      --surface: #f2f0ea;
+      --surface2: #e8e5dd;
+      --accent: #1d4f3b;
+      --accent2: #1d4f3b;
+      --text: #151714;
+      --muted: #65675f;
+      --border: rgba(21, 23, 20, 0.16);
+      --gradient: none;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+    }
+
+    body::before { display: none; }
+
+    nav {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 1.4rem 4rem;
+      background: rgba(242, 240, 234, 0.9);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-logo {
+      color: var(--text);
+      background: none;
+      -webkit-text-fill-color: currentColor;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+    }
+
+    .nav-links { gap: 2rem; }
+    .nav-links a { color: var(--muted); font-size: 0.7rem; }
+    .nav-links a:hover { color: var(--text); }
+
+    section {
+      max-width: 1440px;
+      margin-inline: auto;
+    }
+
+    #hero {
+      min-height: 92vh;
+      padding: 11rem 4rem 6rem;
+      align-items: flex-end;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-bg-text { display: none; }
+    .hero-content { max-width: 1120px; }
+
+    .hero-tag {
+      border: 0;
+      border-radius: 0;
+      padding: 0;
+      margin-bottom: 2.5rem;
+      color: var(--accent);
+      font-size: 0.68rem;
+    }
+
+    .hero-role {
+      margin-bottom: 1.25rem;
+      color: var(--accent);
+      font-size: clamp(1rem, 1.7vw, 1.35rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-tag::before {
+      width: 5px;
+      height: 5px;
+      animation: none;
+    }
+
+    .hero-name {
+      font-size: clamp(4rem, 11vw, 10rem);
+      line-height: 0.86;
+      letter-spacing: -0.075em;
+      max-width: 1100px;
+      margin-bottom: 2.75rem;
+    }
+
+    .hero-name span {
+      display: inline;
+      color: var(--text);
+      background: none;
+      -webkit-text-fill-color: currentColor;
+    }
+
+    .hero-desc {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.5vw, 1.25rem);
+      line-height: 1.65;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      border-radius: 0;
+      padding: 0.9rem 1.25rem;
+      background: var(--text);
+      border: 1px solid var(--text);
+      color: var(--bg);
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn-secondary { background: transparent; color: var(--text); }
+    .btn-primary:hover,
+    .btn-secondary:hover {
+      transform: none;
+      opacity: 1;
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .hero-socials { right: 4rem; gap: 1.1rem; }
+    .hero-socials::before, .hero-socials::after { background: var(--border); height: 50px; }
+    .hero-socials a { color: var(--muted); font-size: 0.62rem; }
+    .hero-socials a:hover { color: var(--accent); }
+
+    #about, #skills, #projects, #experience, #blog, #contact {
+      padding: 8rem 4rem;
+      border-top: 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    #about { gap: 8rem; }
+
+    .section-label {
+      color: var(--accent);
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title {
+      font-size: clamp(2.7rem, 5vw, 5rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      margin-bottom: 2rem;
+    }
+
+    .about-text, .project-desc, .timeline-desc, .contact-text {
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .about-stats {
+      border-top: 1px solid var(--border);
+      gap: 0;
+    }
+
+    .stat-card {
+      background: transparent;
+      border: 0;
+      border-right: 1px solid var(--border);
+      border-radius: 0;
+      padding: 1.5rem 1rem 0 0;
+    }
+    .stat-card:last-child { border-right: 0; padding-left: 1rem; }
+    .stat-card:nth-child(2) { padding-left: 1rem; }
+
+    .stat-num {
+      color: var(--text);
+      background: none;
+      -webkit-text-fill-color: currentColor;
+      font-size: 2rem;
+    }
+
+    .about-card {
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 0;
+      padding: 3rem;
+    }
+    .about-card::before { display: none; }
+
+    .about-card-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 0;
+      background: var(--accent);
+      font-size: 1.25rem;
+    }
+
+    .tag, .tech-tag, .project-badge {
+      border-radius: 0;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.68rem;
+      font-weight: 500;
+    }
+
+    .skills-header { margin-bottom: 4rem; }
+    .skills-grid { grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--border); }
+
+    .skill-card {
+      background: transparent;
+      border: 0;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      border-radius: 0;
+      padding: 2rem 1.5rem;
+    }
+    .skill-card:nth-child(4n) { border-right: 0; }
+    .skill-card:hover { border-color: var(--border); transform: none; background: var(--surface2); }
+    .skill-icon, .skill-bar { display: none; }
+    .skill-name { font-size: 1.05rem; margin-bottom: 0.75rem; }
+    .skill-level { margin: 0; font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+    .projects-grid { gap: 0; border-top: 1px solid var(--border); }
+    .project-card,
+    .project-card.featured {
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid var(--border);
+      border-radius: 0;
+      padding: 3rem 0;
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 0.25fr 0.8fr 1.2fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .project-card.featured > div:first-child { display: contents; }
+    .project-card.featured > div:last-child { display: none !important; }
+    .project-card::before { display: none; }
+    .project-card:hover { transform: none; border-color: var(--border); }
+    .project-num { grid-column: 1; color: var(--accent); margin: 0; }
+    .project-badge { display: none; }
+    .project-title { grid-column: 2; font-size: clamp(1.5rem, 2.5vw, 2.5rem); margin: 0; }
+    .project-desc, .project-tech, .project-links, .project-card > div[style] { grid-column: 3; }
+    .project-desc { margin-bottom: 1.25rem; }
+    .project-tech { margin-bottom: 1.5rem; }
+    .project-link { color: var(--text); }
+    .project-card > div[style] > div:first-child { color: var(--muted) !important; }
+    .project-card > div[style] > div:last-child { gap: 1.25rem !important; }
+    .project-card > div[style] span {
+      padding: 0 !important;
+      border: 0 !important;
+      background: transparent !important;
+      color: var(--muted) !important;
+    }
+    .project-card > div[style] span span { display: none !important; }
+
+    .timeline { padding-left: 0; }
+    .timeline::before, .timeline-item::before { display: none; }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 0.3fr 0.7fr 1fr;
+      gap: 2rem;
+      padding: 2.25rem 0;
+      border-top: 1px solid var(--border);
+    }
+    .timeline-date { color: var(--accent); margin: 0; }
+    .timeline-role { margin: 0; }
+    .timeline-company { grid-column: 2; color: var(--muted); }
+    .timeline-desc { grid-column: 3; grid-row: 1 / span 2; }
+
+    #blog p { color: var(--muted) !important; }
+    #blog .btn-primary svg { display: none; }
+
+    .contact-inner { gap: 8rem; }
+    .contact-link-icon {
+      width: 28px;
+      height: 28px;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      font-size: 0.7rem;
+    }
+    .contact-link-item { border-bottom: 1px solid var(--border); padding-bottom: 0.8rem; }
+    .contact-link-item:hover { color: var(--accent); }
+
+    .form-group input, .form-group textarea {
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid var(--border);
+      border-radius: 0;
+      padding: 0.8rem 0;
+      color: var(--text);
+    }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--accent); }
+
+    footer { max-width: 1440px; margin: 0 auto; border-top: 0; padding: 2.5rem 4rem; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--accent); }
+
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      #hero { min-height: 85vh; padding: 8rem 1.5rem 4rem; }
+      .hero-content { width: 100%; min-width: 0; }
+      .hero-name { font-size: clamp(3rem, 13.5vw, 4.5rem); }
+      #about, #skills, #projects, #experience, #blog, #contact { padding: 5rem 1.5rem; }
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .skill-card:nth-child(4n) { border-right: 1px solid var(--border); }
+      .skill-card:nth-child(2n) { border-right: 0; }
+      .project-card, .project-card.featured { grid-template-columns: 1fr; gap: 1rem; padding: 2.5rem 0; }
+      .project-num, .project-title, .project-desc, .project-tech, .project-links, .project-card > div[style] { grid-column: 1; }
+      .timeline-item { grid-template-columns: 1fr; gap: 0.65rem; }
+      .timeline-company, .timeline-desc { grid-column: 1; grid-row: auto; }
+      footer { padding: 2rem 1.5rem; }
+    }
   </style>
 </head>
 <body>
@@ -884,7 +1200,8 @@
         Narayan<br/>
         <span>Adhikari</span>
       </h1>
-      <p class="hero-desc">Software Engineer crafting full-stack web applications and intelligent systems. Passionate about clean code, blockchain, and building things that matter.</p>
+      <p class="hero-role">Full-Stack Developer</p>
+      <p class="hero-desc">Building thoughtful web products with MongoDB, Express, React, and Node.js, with a deep interest in blockchain technology.</p>
       <div class="hero-ctas">
         <a href="#projects" class="btn-primary">View My Work</a>
         <a href="#contact" class="btn-secondary">Let's Talk</a>
@@ -899,10 +1216,10 @@
 
   <section id="about">
     <div class="fade-up">
-      <div class="section-label">// who I am</div>
-      <h2 class="section-title">Building digital<br/>products that<br/><em style="color:var(--accent);font-style:normal;">leave a mark.</em></h2>
-      <p class="about-text">I'm Narayan Adhikari, a Software Engineer based in Nepal with a passion for building full-stack web apps and exploring emerging tech like blockchain and machine learning.</p>
-      <p class="about-text">From predictive ML models to NFT-based ticketing systems, I enjoy solving real-world problems with clean, efficient code.</p>
+      <div class="section-label">Profile</div>
+      <h2 class="section-title">Full-stack development<br/>meets blockchain<br/><em style="color:var(--accent);font-style:normal;">curiosity.</em></h2>
+      <p class="about-text">I'm Narayan Adhikari, a full-stack developer based in Nepal. I build reliable web applications across React, Node.js, Express, and MongoDB.</p>
+      <p class="about-text">I also love exploring blockchain technology and applying it to practical products, from NFT-based ticketing to transparent digital ownership.</p>
       <div class="about-stats">
         <div class="stat-card">
           <div class="stat-num">3+</div>
@@ -913,8 +1230,8 @@
           <div class="stat-label">Technologies</div>
         </div>
         <div class="stat-card">
-          <div class="stat-num">∞</div>
-          <div class="stat-label">Curiosity</div>
+          <div class="stat-num">03</div>
+          <div class="stat-label">Focus Areas</div>
         </div>
       </div>
     </div>
@@ -922,14 +1239,14 @@
       <div class="about-card">
         <div class="about-card-avatar">NA</div>
         <h3>Narayan Adhikari</h3>
-        <p>Software Engineer · Pokhara, Nepal</p>
+        <p>Full-Stack Developer · Pokhara, Nepal</p>
         <div class="about-card-tags">
           <span class="tag">React</span>
           <span class="tag">Node.js</span>
+          <span class="tag">Express</span>
+          <span class="tag">MongoDB</span>
           <span class="tag">JavaScript</span>
-          <span class="tag">Python</span>
           <span class="tag">Solana</span>
-          <span class="tag">Machine Learning</span>
           <span class="tag">Full Stack</span>
           <span class="tag">Blockchain</span>
         </div>
@@ -940,33 +1257,33 @@
   <section id="skills">
     <div class="skills-header fade-up">
       <div>
-        <div class="section-label">// what I know</div>
-        <h2 class="section-title">Skills &<br/>Technologies</h2>
+        <div class="section-label">Capabilities</div>
+        <h2 class="section-title">Web technologies<br/>and beyond</h2>
       </div>
     </div>
     <div class="skills-grid">
-      <div class="skill-card fade-up"><span class="skill-icon">⚛️</span><div class="skill-name">React.js</div><div class="skill-level">Advanced</div><div class="skill-bar"><div class="skill-bar-fill" style="width:88%"></div></div></div>
-      <div class="skill-card fade-up"><span class="skill-icon">🟩</span><div class="skill-name">Node.js</div><div class="skill-level">Advanced</div><div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div></div>
-      <div class="skill-card fade-up"><span class="skill-icon">🔷</span><div class="skill-name">JavaScript</div><div class="skill-level">Advanced</div><div class="skill-bar"><div class="skill-bar-fill" style="width:90%"></div></div></div>
-      <div class="skill-card fade-up"><span class="skill-icon">🐍</span><div class="skill-name">Python</div><div class="skill-level">Intermediate</div><div class="skill-bar"><div class="skill-bar-fill" style="width:75%"></div></div></div>
-      <div class="skill-card fade-up"><span class="skill-icon">🧠</span><div class="skill-name">Machine Learning</div><div class="skill-level">Intermediate</div><div class="skill-bar"><div class="skill-bar-fill" style="width:70%"></div></div></div>
-      <div class="skill-card fade-up"><span class="skill-icon">⛓️</span><div class="skill-name">Solana / Blockchain</div><div class="skill-level">Learning</div><div class="skill-bar"><div class="skill-bar-fill" style="width:50%"></div></div></div>
-      <div class="skill-card fade-up"><span class="skill-icon">🗄️</span><div class="skill-name">MySQL / Databases</div><div class="skill-level">Intermediate</div><div class="skill-bar"><div class="skill-bar-fill" style="width:72%"></div></div></div>
-      <div class="skill-card fade-up"><span class="skill-icon">🌐</span><div class="skill-name">HTML / CSS</div><div class="skill-level">Advanced</div><div class="skill-bar"><div class="skill-bar-fill" style="width:92%"></div></div></div>
+      <div class="skill-card fade-up"><div class="skill-name">React.js</div><div class="skill-level">Advanced</div></div>
+      <div class="skill-card fade-up"><div class="skill-name">Node.js</div><div class="skill-level">Advanced</div></div>
+      <div class="skill-card fade-up"><div class="skill-name">Express.js</div><div class="skill-level">Core Stack</div></div>
+      <div class="skill-card fade-up"><div class="skill-name">MongoDB</div><div class="skill-level">Core Stack</div></div>
+      <div class="skill-card fade-up"><div class="skill-name">JavaScript</div><div class="skill-level">Advanced</div></div>
+      <div class="skill-card fade-up"><div class="skill-name">Solana / Blockchain</div><div class="skill-level">Learning</div></div>
+      <div class="skill-card fade-up"><div class="skill-name">MySQL / Databases</div><div class="skill-level">Intermediate</div></div>
+      <div class="skill-card fade-up"><div class="skill-name">HTML / CSS</div><div class="skill-level">Advanced</div></div>
     </div>
   </section>
 
   <section id="projects">
     <div class="fade-up">
-      <div class="section-label">// what I've built</div>
-      <h2 class="section-title">Featured Projects</h2>
+      <div class="section-label">Selected Work</div>
+      <h2 class="section-title">Projects with<br/>a clear purpose</h2>
     </div>
     <div class="projects-grid">
 
       <div class="project-card featured fade-up">
         <div>
           <div class="project-num">01 — Featured</div>
-          <span class="project-badge">🚧 In Progress</span>
+          <span class="project-badge">In Progress</span>
           <h3 class="project-title">FairTicket: Refundable NFT-Based Event Ticketing</h3>
           <p class="project-desc">A blockchain-based ticketing system built on Solana where event tickets are issued as NFTs. Users can burn their ticket to receive a 70% refund in USDC if they can't attend. Organizers can control resale using advanced token permissions — preventing scalping and ensuring fair pricing for everyone.</p>
           <div class="project-tech">
@@ -1004,48 +1321,6 @@
 
       <div class="project-card fade-up">
         <div class="project-num">02</div>
-        <span class="project-badge">🎓 College Project</span>
-        <h3 class="project-title">Early Heart Disease Prediction</h3>
-        <p class="project-desc">A predictive classification model analyzing patient health data to detect heart disease risk early. Implements multiple ML algorithms for high accuracy and comparative analysis.</p>
-        <div class="project-tech">
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">scikit-learn</span>
-          <span class="tech-tag">Pandas</span>
-          <span class="tech-tag">NumPy</span>
-          <span class="tech-tag">Matplotlib</span>
-          <span class="tech-tag">Jupyter</span>
-        </div>
-        <div style="margin-bottom:1.5rem;">
-          <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.6rem;">Team</div>
-          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
-            <span style="display:inline-flex;align-items:center;gap:6px;font-size:0.78rem;font-weight:600;padding:4px 12px;border-radius:100px;background:var(--surface2);border:1px solid var(--border);color:var(--text);">
-              <span style="width:20px;height:20px;background:var(--gradient);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:0.6rem;font-weight:800;color:#fff;flex-shrink:0;">NA</span>
-              Narayan Adhikari
-            </span>
-            <span style="display:inline-flex;align-items:center;gap:6px;font-size:0.78rem;font-weight:600;padding:4px 12px;border-radius:100px;background:var(--surface2);border:1px solid var(--border);color:var(--text);">
-              <span style="width:20px;height:20px;background:linear-gradient(135deg,#5b8dee,#a78bfa);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:0.6rem;font-weight:800;color:#fff;flex-shrink:0;">AT</span>
-              Aayush Thapa
-            </span>
-            <span style="display:inline-flex;align-items:center;gap:6px;font-size:0.78rem;font-weight:600;padding:4px 12px;border-radius:100px;background:var(--surface2);border:1px solid var(--border);color:var(--text);">
-              <span style="width:20px;height:20px;background:linear-gradient(135deg,#22c55e,#16a34a);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:0.6rem;font-weight:800;color:#fff;flex-shrink:0;">DT</span>
-              Dipendra Thapa
-            </span>
-            <span style="display:inline-flex;align-items:center;gap:6px;font-size:0.78rem;font-weight:600;padding:4px 12px;border-radius:100px;background:var(--surface2);border:1px solid var(--border);color:var(--text);">
-              <span style="width:20px;height:20px;background:linear-gradient(135deg,#f59e0b,#ef4444);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:0.6rem;font-weight:800;color:#fff;flex-shrink:0;">RS</span>
-              Rajiv Kumar Singh
-            </span>
-          </div>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/NArayan1703" class="project-link" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            GitHub
-          </a>
-        </div>
-      </div>
-
-      <div class="project-card fade-up">
-        <div class="project-num">03</div>
         <h3 class="project-title">FoodShare: Community Food Platform</h3>
         <p class="project-desc">A web platform connecting food donors with NGOs and individuals in need to reduce food waste. Features user roles, donation listings, and real-time donation tracking for communities.</p>
         <div class="project-tech">
@@ -1068,7 +1343,7 @@
 
   <section id="experience">
     <div class="fade-up">
-      <div class="section-label">// where I've been</div>
+      <div class="section-label">Background</div>
       <h2 class="section-title">Experience &<br/>Education</h2>
     </div>
     <div class="timeline">
@@ -1077,12 +1352,6 @@
         <div class="timeline-role">Software Engineering Student</div>
         <div class="timeline-company">Bachelor's in Software Engineering · Nepal</div>
         <div class="timeline-desc">Studying core software engineering principles, algorithms, data structures, and modern web development. Actively building real-world projects alongside coursework.</div>
-      </div>
-      <div class="timeline-item fade-up">
-        <div class="timeline-date">2024</div>
-        <div class="timeline-role">ML Project — Heart Disease Prediction</div>
-        <div class="timeline-company">Academic Project · with Aayush Thapa, Dipendra Thapa &amp; Rajiv Kumar Singh</div>
-        <div class="timeline-desc">Built and evaluated multiple classification models using Python and scikit-learn on real patient datasets. Achieved high accuracy through cross-validation and feature engineering.</div>
       </div>
       <div class="timeline-item fade-up">
         <div class="timeline-date">2024</div>
@@ -1103,13 +1372,13 @@
   <section id="blog">
     <div class="fade-up" style="display:flex;flex-direction:column;align-items:flex-start;gap:2rem;">
       <div>
-        <div class="section-label">// thoughts</div>
-        <h2 class="section-title">From the Blog</h2>
+        <div class="section-label">Writing</div>
+        <h2 class="section-title">Notes from<br/>the work</h2>
       </div>
-      <p style="color:rgba(240,237,232,0.6);font-size:1rem;line-height:1.8;font-weight:300;max-width:540px;">I write about machine learning, blockchain, and lessons learned while building real-world projects. All my articles are published on Medium.</p>
+      <p style="color:rgba(240,237,232,0.6);font-size:1rem;line-height:1.8;font-weight:300;max-width:540px;">I write about my thoughts, things that interest me, and ideas that others might find useful or worth exploring. All my writing is published on Medium.</p>
       <a href="https://medium.com/@narayanadhikari970" target="_blank" rel="noopener" class="btn-primary" style="display:inline-flex;align-items:center;gap:10px;">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
-        Explore My Blogs on Medium
+        Read on Medium
       </a>
     </div>
   </section>
@@ -1117,12 +1386,12 @@
   <section id="contact">
     <div class="contact-inner">
       <div class="fade-up">
-        <div class="section-label">// get in touch</div>
-        <h2 class="section-title">Let's Build<br/>Something<br/><span style="color:var(--accent)">Together.</span></h2>
+        <div class="section-label">Contact</div>
+        <h2 class="section-title">Have a project<br/>or opportunity<br/><span style="color:var(--accent)">in mind?</span></h2>
         <p class="contact-text">I'm currently open to freelance projects, collaborations, and full-time opportunities. If you have an idea or a role that fits, I'd love to hear from you.</p>
         <div class="contact-links">
           <a href="mailto:narayanadhikari970@gmail.com" class="contact-link-item">
-            <div class="contact-link-icon">✉️</div>
+            <div class="contact-link-icon">Mail</div>
             narayanadhikari970@gmail.com
           </a>
           <a href="https://github.com/NArayan1703" class="contact-link-item" target="_blank" rel="noopener">
@@ -1168,7 +1437,7 @@
   </section>
 
   <footer>
-    <div class="footer-copy">© 2025 Narayan Adhikari. Built with ❤️ in Nepal.</div>
+    <div class="footer-copy">© 2026 Narayan Adhikari · Pokhara, Nepal</div>
     <div class="footer-socials">
       <a href="https://github.com/NArayan1703" target="_blank" rel="noopener">GitHub</a>
       <a href="https://www.linkedin.com/in/narayan1703/" target="_blank" rel="noopener">LinkedIn</a>
