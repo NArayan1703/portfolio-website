@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /merita/
+Disallow: /merita
+Disallow: /merita.html
+Disallow: /For*
+Allow: /
